@@ -6,8 +6,8 @@ This is a full-stack AI-powered assistant that allows users to upload documents 
 
 ## Features
 
--  **Semantic Search** with Pinecone Vector DB
--  **Contextual Chat** using OpenAI GPT models
+-  Semantic Search with Pinecone Vector DB
+-  Contextual Chat using OpenAI GPT models
 -  Upload and embed custom documents
 -  Persistent chat memory across questions
 -  Full-stack application with FastAPI backend and React frontend
@@ -16,27 +16,42 @@ This is a full-stack AI-powered assistant that allows users to upload documents 
 
 ## Project Structure
 
+
 knowledge-assistant/
+
 ├── backend/
+
 │ ├── main.py # FastAPI app
+
 │ ├── llm_utils.py # OpenAI API logic
+
 │ ├── pinecone_utils.py # Pinecone vector store functions
+
 │ ├── requirements.txt # Python dependencies
+
 │ └── .gitignore
+
 ├── frontend/
+
 │ ├── public/
+
 │ └── src/
+
 │ ├── components/
+
 │ ├── App.js
+
 │ ├── index.js
+
 │ └── ...
+
 ├── .gitignore
+
 ├── LICENSE
+
 └── README.md
 
-yaml
-Copy
-Edit
+
 
 ---
 
@@ -47,81 +62,89 @@ Edit
 ```bash
 git clone https://github.com/S-atvikSingh/knowledge-assistant.git
 cd knowledge-assistant
-2. Backend Setup (FastAPI)
-a. Navigate and Install Dependencies
-bash
-Copy
-Edit
+````
+### 2. Backend Setup (FastAPI)
+#### a. Navigate and Install Dependencies
+```bash
 cd backend
 python -m venv venv
 venv\Scripts\activate      # Windows
 source venv/bin/activate   # macOS/Linux
+````
 
+```bash
 pip install -r requirements.txt
-b. Set Environment Variables
+````
+
+#### b. Set Environment Variables
 Create a .env file in backend/:
 
-env
-Copy
-Edit
+```env
 OPENAI_API_KEY=your-openai-api-key
 PINECONE_API_KEY=your-pinecone-api-key
 PINECONE_ENVIRONMENT=your-pinecone-environment
 PINECONE_INDEX_NAME=your-index-name
-c. Run Backend Server
-bash
-Copy
-Edit
+````
+
+#### c. Run Backend Server
+
+```bash
 uvicorn main:app --reload
+````
 Backend will run at: http://localhost:8000
 
-3. Frontend Setup (React)
-a. Navigate and Install
-bash
-Copy
-Edit
+### 3. Frontend Setup (React)
+#### a. Navigate and Install
+
+```bash
 cd ../frontend
 npm install
-b. Start React App
-bash
-Copy
-Edit
+````
+
+#### b. Start React App
+
+```bash
 npm start
+````
 Frontend will run at: http://localhost:3000
 
-Screenshots
+
+---
+
+## Screenshots
 <img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/9063e652-0d3b-48af-8ec1-e281bff1accd" />
 
 
-API Endpoints
-Method	Endpoint	Description
-POST	/upload	Upload and embed docs
-POST	/chat	Ask a question using chat
 
-Tech Stack
-Frontend: React
+---
 
-Backend: FastAPI (Python)
+## API Endpoints
+-  Method	Endpoint	Description
+-  POST	/upload	Upload and embed docs
+-  POST	/chat	Ask a question using chat
 
-LLM: OpenAI GPT-4 / GPT-3.5
+---
 
-Vector DB: Pinecone
+## Tech Stack
+-  Frontend: React
+-  Backend: FastAPI (Python)
+-  LLM: OpenAI GPT-4 / GPT-3.5
+-  Vector DB: Pinecone
+-  State Mgmt: React Hooks
+-  Others: LangChain, dotenv
 
-State Mgmt: React Hooks
+---
 
-Others: LangChain, dotenv
+## To-Do 
+-  Add PDF & CSV support
+-  Deploy frontend (Vercel/Netlify)
+-  Deploy backend (Render/Fly.io)
+-  Auth (e.g., Firebase/Auth0)
+-  GitHub Actions for CI/CD
 
-To-Do 
- Add PDF & CSV support
+---
 
- Deploy frontend (Vercel/Netlify)
-
- Deploy backend (Render/Fly.io)
-
- Auth (e.g., Firebase/Auth0)
-
- GitHub Actions for CI/CD
-
-Author
+## Author
 S-atvik Singh
+
 
